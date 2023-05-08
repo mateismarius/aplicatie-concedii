@@ -1,0 +1,101 @@
+﻿@model Utilitar.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Actualizare profil</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <hr />
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col">
+                    <label  class="control-label">Nume</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" contenteditable="false" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label">Prenume</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" contenteditable="false" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label  class="control-label">Functie</label>
+                    <select asp-for="RoleId" class ="form-control" asp-items="ViewBag.RoleId"></select>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="Marca" class="control-label"></label>
+                    <input asp-for="Marca" class="form-control" />
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label  class="control-label">Delegat la</label>
+                    <input asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label  class="control-label">Titular la</label>
+                    <input asp-for="PermanentLocation" class="form-control" />
+                    <span asp-validation-for="PermanentLocation" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label class="control-label">Data inceperii</label>
+                    <input asp-for="DataStart" class="form-control" type="date" />
+                    <span asp-validation-for="DataStart" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label  class="control-label">Data incetarii</label>
+                    <input asp-for="DataFinal" class="form-control" type="date"  />
+                    <span asp-validation-for="DataFinal" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label  class="control-label">Drepturi an curent</label>
+                    <input asp-for="DrepturiCurente" class="form-control" />
+                    <span asp-validation-for="DrepturiCurente" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label  class="control-label">Drepturi ani anteriori</label>
+                    <input asp-for="DrepturiRestante" class="form-control"/>
+                    <span asp-validation-for="DrepturiRestante" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDelegate" /> Delegat
+                </label>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="row">
+                <div class="form-group col button-back ">
+                    <button class="btn btn-info ">
+                        <a asp-action="Index" >Inapoi la lista</a>
+                    </button>
+                </div>
+                <div class="form-group col ">
+                    <input type="submit" value="Salveaza" class="btn btn-primary float-end btn-custom" />
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<script>
+    
+</script>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

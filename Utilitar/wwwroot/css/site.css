@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+
+td button {
+    margin:1px !important;
+    
+}
+
+button a {
+    text-decoration: none;
+    color:aliceblue;
+    
+}
+
+button a:hover {
+    color:azure;
+}
+
+.table-responsive {
+   
+    overflow: scroll;
+}
+
+thead tr:nth-child(1) th {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+table tr {
+    font-size: 14px !important;
+}
+
+#p-menu button{
+    margin: 3px;
+    border-radius:5px;
+}
+
+    #p-menu button:active {
+        background-color: #0b125e;
+    }
+
+
+#rendered-body {
+    
+}
+#export {
+    margin-top: 100px;
+}
+
+#submit-row {
+    margin-top: 10px;
+}
+
+#home-card-list img{
+    width:100%;
+    height:250px;
+}
+
+.brand-image{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+
+
+
+

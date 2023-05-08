@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Utilitar.ViewModels.EmployeeVM>
+
+@{
+    ViewData["Title"] = "SearchPartial";
+}
+<table class="table tabelFixedHeader">
+    <thead class="table-responsive">
+        <tr>
+            <th>
+                Nume
+            </th>
+            <th>
+                Functie
+            </th>
+            <th>
+                Institutia unde activeaza
+            </th>
+            <th>
+                Institutia unde este incadrat
+            </th>
+            <th>
+                Tipul activitatii
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                Data Start
+            <th>
+                Data Final
+            </th>
+            <th>
+                Drepturi curente
+            <th>
+                Drepturi restante
+            </th>
+            <th>
+                Efectuat
+            </th>
+            <th>
+                Concediu ramas
+            </th>
+            <th>
+                Concediu de studiu efectuat
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+   
+
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermanentLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDelegate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrepturiCurente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrepturiRestante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Efectuat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaysLeft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CSEfectuat)
+            </td>
+            <td>
+                <div class="btn-group btn-group-sm" role="group">
+                    <button class="btn btn-primary" value="Editeaza">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editeaza</a>
+                    </button>
+                    <button class="btn btn-dark">
+                        <a asp-controller="FreeDays" asp-action="DaysOffList" asp-route-id="@item.Id">Concedii</a>
+                    </button>
+                    <button class="btn btn-danger">
+                        <a asp-action="Delete" asp-route-id="@item.Id">Sterge</a>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    }
+</tbody>
+</table>
+    

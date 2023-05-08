@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Utilitar.ViewModels.FreeDayVM>
+
+@{
+    ViewData["Title"] = "Selected";
+    Layout = "~/Views/Shared/_LayoutCon.cshtml";
+}
+
+<div class="container-fluid ">
+    <div class="row justify-content-between">
+        <p class="col-4">
+            <button class="btn btn-primary">
+                <a asp-action="Create" asp-route-location="@ViewBag.location">Adauga +</a>
+            </button>
+        </p>
+        <div class="col-3 ">
+            <input type="text" class="form-control " id="searchTxt" placeholder="Cauta" />
+        </div>
+    </div>
+</div>
+
+<div id="grdUsers">
+    <partial name="_SearchDayPartial" />
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            getEmployee();
+            $('#searchTxt').on('change keyup paste', function () {
+                getEmployee();
+            });
+        });
+
+        function getEmployee() {
+            $.ajax({
+                url: '@Url.Action("GetSearchDay", "FreeDays")',
+                datatype: 'html',
+                method: 'GET',
+                data: { searchTerm: $('#searchTxt').val() },
+                success: function (res) {
+                    $('#grdUsers').html('').html(res);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+        }
+    </script>
+}

@@ -1,0 +1,69 @@
+﻿@model Utilitar.Models.FreeDay
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalii</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Numarul cererii:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequestNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            Data cererii:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequestDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Data inceperii
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Data intoarcerii
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FinishDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Durata:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt class = "col-sm-2">
+            Nume:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Employee.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            Tipul de concediu:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DayOffType.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="row">
+        <div class="col button-back ">
+            <button class="btn btn-info ">
+                <a asp-action="Index">Inapoi la lista</a>
+            </button>
+        </div>
+        <div class="form-group col ">
+            <button class="btn btn-primary " value="Editeaza">
+                <a asp-action="Edit" asp-route-id="@Model?.Id">Editeaza</a>
+            </button>
+        </div>
+    </div>
+</div>

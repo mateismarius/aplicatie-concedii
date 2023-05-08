@@ -1,0 +1,72 @@
+﻿@model Utilitar.ViewModels.ExportVM
+
+@{
+    ViewData["Title"] = "Export";
+}
+
+
+<h2>Alegeti criteriile pentru export</h2>
+
+
+<div class="row" >
+    <div class="col-md-4">
+        <hr />
+        <form asp-action="SaveExcel">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DateMonth" class="control-label">Luna</label>
+                <select asp-for="DateMonth"  class="form-control form-control-lg">
+                   
+                    <option value="1">Ianuarie</option>
+                    <option value="2">Februarie</option>
+                    <option value="3">Martie</option>
+                    <option value="4">Aprilie</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Iunie</option>
+                    <option value="7">Iulie</option>
+                    <option value="8">August</option>
+                    <option value="9">Septembrie</option>
+                    <option value="10">Octombrie</option>
+                    <option value="11">Noiembrie</option>
+                    <option value="12">Decembrie</option>  
+                </select>
+                <span asp-validation-for="DateMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateYear" class="control-label">Anul</label>
+                <select asp-for="DateYear" class="form-control form-control-lg">
+                    @{foreach(var opt in Enumerable.Range(2022, 31))
+                    {
+                            <option value=@opt>@opt</option>
+                    }}
+                </select>
+                <span asp-validation-for="DateYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label">Institutia</label>
+                <input asp-for="Location" class="form-control" value="@ViewBag.Location" readonly />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegNo" class="control-label">Numar de inregistrare</label>
+                <input asp-for="RegNo" class="form-control" />
+                <span asp-validation-for="RegNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MadeBy" class="control-label">Intocmit de</label>
+                <input asp-for="MadeBy" class="form-control" value="@ViewBag.User" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="SignedBy" class="control-label">Semnat de</label>
+                <select asp-for="SignedBy" class="form-control" asp-items="ViewBag.ProcurorId"></select>
+            </div>
+            <div class="form-group float-end" style="margin-top: 10px;">
+                <input type="submit" value="Exporta" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

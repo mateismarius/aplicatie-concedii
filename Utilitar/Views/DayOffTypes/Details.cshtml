@@ -1,0 +1,46 @@
+﻿@model Utilitar.Models.DayOffType
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalii</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Denumire:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Abreviere
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            Platit:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsPaid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="row">
+        <div class="col button-back ">
+            <button class="btn btn-info ">
+                <a asp-action="Index">Inapoi la lista</a>
+            </button>
+        </div>
+        <div class="form-group col ">
+            <button class="btn btn-primary " value="Editeaza">
+                <a asp-action="Edit" asp-route-id="@Model?.Id">Editeaza</a>
+            </button>
+        </div>
+    </div>
+</div>

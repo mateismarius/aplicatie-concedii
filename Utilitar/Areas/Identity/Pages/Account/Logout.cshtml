@@ -1,0 +1,22 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<header>
+  @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Page("", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link text-dark" >Deconectare</button>
+            </form>
+        }
+        else
+        {
+            <p>V-ati deconectat cu succes!</p>
+        }
+    }   
+
+   
+</header>

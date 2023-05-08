@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Utilitar.ViewModels.FreeDayVM>
+
+@{
+    ViewData["Title"] = "SearchDayPartial";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Angajat
+            </th>
+            <th>
+                Numar cerere
+            </th>
+            <th>
+                Data cererii
+            </th>
+            <th>
+                Data inceperii concediului
+            </th>
+            <th>
+                Data intoarcerii la munca
+            </th>
+            <th>
+                Durata
+            </th>
+
+            <th>
+                Tipul de concediu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayOffType.Name)
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button class="btn btn-primary" value="Editeaza">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Editeaza</a>
+                        </button>
+                        <button class="btn btn-danger">
+                            <a asp-action="Delete" asp-route-id="@item.Id">Sterge</a>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

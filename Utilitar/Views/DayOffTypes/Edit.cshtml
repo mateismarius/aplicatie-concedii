@@ -1,0 +1,43 @@
+﻿@model Utilitar.Models.DayOffType
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Actualizare</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <hr />
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Denumire</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Abreviere</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPaid" /> Platit
+                </label>
+            </div>
+            <div class="row " id="submit-row">
+                <div class="form-group col">
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Back to List</a>
+                    </button>
+                </div>
+                <div class="form-group col ">
+                    <input type="submit" value="Salveaza" class="btn btn-primary float-end" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

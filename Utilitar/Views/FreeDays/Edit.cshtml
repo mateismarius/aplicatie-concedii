@@ -1,0 +1,63 @@
+﻿@model Utilitar.Models.FreeDay
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Actualizare</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <hr />
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Numarul cererii</label>
+                <input asp-for="RequestNumber" class="form-control" />
+                <span asp-validation-for="RequestNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data cererii</label>
+                <input asp-for="RequestDate" class="form-control" type="date" />
+                <span asp-validation-for="RequestDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data inceperii</label>
+                <input asp-for="StartDate" class="form-control" type="date" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data intoarcerii</label>
+                <input asp-for="FinishDate" class="form-control" type="date" />
+                <span asp-validation-for="FinishDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Durata</label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nume</label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipul de concediu</label>
+                <select asp-for="DayOffTypeId" class="form-control" asp-items="ViewBag.DayOffTypeId"></select>
+            </div>
+            <div class="row " id="submit-row">
+                <div class="form-group col">
+                    <button class="btn btn-info">
+                        <a asp-action="Index">Inapoi la lista</a>
+                    </button>
+                </div>
+                <div class="form-group col ">
+                    <input type="submit" value="Salveaza" class="btn btn-primary float-end" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

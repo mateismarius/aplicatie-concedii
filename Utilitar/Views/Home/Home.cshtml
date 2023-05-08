@@ -1,0 +1,99 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Utilitar</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/Utilitar.styles.css" asp-append-version="true" />
+    </head>
+    <body>
+        <header>
+          <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-gradient  border-bottom box-shadow mb-3">
+            <div class="container d-flex justify-content-start">
+                <a class="navbar-brand" asp-area="" asp-controller="Employees" asp-action="Index">
+                    <img class="brand-image rounded" src="/images/insigna-ministerul-public.jpg" alt="Card image cap" />
+                </a>
+                <div class="d-flex flex-column" style=" background-color:aquamarine; margin-left:25%">
+                    <p>MINISTERUL PUBLIC</p>
+                    <p>PARCHETUL DE PE LANGA TRIBUNALUL DAMBOVITA</p>
+                </div>
+            </div>
+        </nav>
+        </header>
+        <div class="container" id="home-card-list">
+          <div class="card-deck ">
+            <div class="row">
+                <a class="nav-link text-dark col-sm-3" asp-area="" asp-controller="Employees" asp-action="Index">
+                    <div class="card card-custom">
+                        <img class="card-img-top" src="/images/concedii.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplicatie Concedii</h5>
+                            <p class="card-text">In aceasta aplicatie se tine evidenta concediilor si se exporta pontajele</p>
+                        </div>
+                    </div>
+                </a>
+           <!--     <a class="nav-link text-dark col" asp-area="" asp-controller="FreeDays" asp-action="Index">
+                    <div class="card " card-custom">
+                        <img class="card-img-top" src="/images/concedii.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="nav-link text-dark col" asp-area="" asp-controller="DayOffTypes" asp-action="Index">
+                    <div class="card " card-custom">
+                        <img class="card-img-top" src="/images/tipuri_concedii.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                     </a>-->
+            </div> 
+        <!--    <div class="row">
+                <a class="nav-link text-dark col" asp-area="" asp-controller="LegallDays" asp-action="Index">
+                    <div class="card" card-custom">
+                        <img class="card-img-top" src="/images/zile_libere.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="nav-link text-dark col" asp-area="" asp-controller="Roles" asp-action="Index">
+                    <div class="card" card-custom">
+                        <img class="card-img-top" src="/images/functii.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="nav-link text-dark col" asp-area="" asp-controller="Schedule" asp-action="Index">
+                    <div class="card " card-custom">
+                        <img class="card-img-top" src="/images/pontaje.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>   -->
+            </div>
+       </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </body>
+    
+
+</html>

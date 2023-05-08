@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Utilitar.Models.LegallDay>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" >
+    <h2>Lista zilelor libere legale</h2>
+
+    <p>
+        <button class="btn btn-primary">
+            <a asp-action="Create">Adauga +</a>
+        </button>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Denumire
+                </th>
+                <th>
+                    Data
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOff)
+                    </td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group">
+                            <button class="btn btn-primary" value="Editeaza">
+                                <a asp-action="Edit" asp-route-id="@item.Id">Editeaza</a>
+                            </button>
+                            <button class="btn btn-danger">
+                                <a asp-action="Delete" asp-route-id="@item.Id">Sterge</a>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
